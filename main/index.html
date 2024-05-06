@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"/>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -154,6 +155,49 @@
         </ul>
       </div>
     </section>
+
+    <section class="section-contact">
+      <div class="container section-contact__container">
+        <h3 class="section-contact__subtitle subtitle">Здесь вы можете</h3>
+        <h2 class="section-contact__title title">Связаться со мной</h2>
+        <p class="section-contact__description">Заполните форму и я свяжусь с вами через некоторое время</p>
+
+        <form class="section-contact__form" autocomplete="off">
+          <label class="section-contact__label">
+            Имя
+            <input class="section-contact__input" type="text">
+          </label>
+          <label class="section-contact__label">
+            Фамилия
+            <input class="section-contact__input" type="text">
+          </label>
+          <label class="section-contact__label">
+              E-mail
+            <input class="section-contact__input" type="email">
+          </label>
+          <label class="section-contact__label">
+            Телефон
+            <input class="section-contact__input" type="tel">
+          </label>
+          <label class="section-contact__label section-contact__label-select">
+            Тема обращения
+            <select class="section-contact__select" name="topic">
+              <option value="">Выберите тему</option>
+              <option value="1">Индивидуальный проект</option>
+              <option value="2">Вакансия</option>
+              <option value="3">Другое</option>
+            </select>
+          </label>
+          <label class="section-contact__label section-contact__label-textarea">
+            Сообщение
+            <textarea class="section-contact__textarea" name="message" rows="6" placeholder="Напишите своё сообщение..."></textarea>
+          </label>
+          <button class="btn section-contact__btn" type="submit">Отправить</button>
+        </form>
+      </div>
+    </section>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+  <script src="js/choices.js"></script>
 </body>
 </html>
