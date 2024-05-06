@@ -540,6 +540,7 @@ html{
   resize: vertical;
 }
 
+.section-contact__input::placeholder,
 .section-contact__textarea::placeholder{
   color: #505050;
 }

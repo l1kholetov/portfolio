@@ -165,19 +165,19 @@
         <form class="section-contact__form" autocomplete="off">
           <label class="section-contact__label">
             Имя
-            <input class="section-contact__input" type="text">
+            <input class="section-contact__input" type="text" placeholder="Введите имя">
           </label>
           <label class="section-contact__label">
             Фамилия
-            <input class="section-contact__input" type="text">
+            <input class="section-contact__input" type="text" placeholder="Введите фамилию">
           </label>
           <label class="section-contact__label">
               E-mail
-            <input class="section-contact__input" type="email">
+            <input class="section-contact__input" type="email" placeholder="Введите E-mail">
           </label>
           <label class="section-contact__label">
             Телефон
-            <input class="section-contact__input" type="tel">
+            <input class="section-contact__input" type="tel" placeholder="+7 (___) ___-__-__">
           </label>
           <label class="section-contact__label section-contact__label-select">
             Тема обращения
@@ -190,14 +190,16 @@
           </label>
           <label class="section-contact__label section-contact__label-textarea">
             Сообщение
-            <textarea class="section-contact__textarea" name="message" rows="6" placeholder="Напишите своё сообщение..."></textarea>
+            <textarea class="section-contact__textarea" name="message" rows="6" placeholder="Напишите своё сообщение и Телеграм для связи в формате @nickname"></textarea>
           </label>
           <button class="btn section-contact__btn" type="submit">Отправить</button>
         </form>
       </div>
     </section>
   </main>
+  <script src="js/inputmask.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+  <script src="js/inputmask.js"></script>
   <script src="js/choices.js"></script>
 </body>
 </html>
