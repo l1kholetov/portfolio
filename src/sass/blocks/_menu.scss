@@ -12,12 +12,20 @@
 
 	cursor: pointer;
 
+	&:hover {
+		span {
+			background-color: $main-color;
+		}
+	}
+
 	span {
 		display: block;
 		width: 30px;
 		height: 3px;
 
 		background-color: #FFF;
+
+		transition: background-color .2s linear;
 	}
 
 	span.hamburger__long {
