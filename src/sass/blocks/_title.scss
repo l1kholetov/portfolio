@@ -1,4 +1,6 @@
 .title {
+	margin-bottom: 0;
+
 	font-size: 36px;
 	line-height: 60px;
 	font-weight: 700;
@@ -12,6 +14,11 @@
 	&_fz16 {
 		font-size: 16px;
 		line-height: 24px;
+	}
+
+	&_fz20 {
+		font-size: 20px;
+		line-height: 30px;
 	}
 
 	&_fz48 {

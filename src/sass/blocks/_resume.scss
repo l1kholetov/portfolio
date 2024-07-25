@@ -1,0 +1,134 @@
+.resume {
+	padding-top: 60px;
+	padding-bottom: 60px;
+
+	&__title {
+		margin-bottom: 0;
+
+		text-align: center;
+	}
+
+	&__subtitle {
+		position: relative;
+
+		margin-bottom: 6px;
+
+		text-align: center;
+
+		@include before_circle;
+
+		&:before {
+			left: calc(50% - 18px);
+		}
+	}
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(2, 437px);
+		justify-content: space-between;
+
+		padding: 60px 65px 0 65px;
+	}
+
+	&__column {
+		&-title {
+			position: relative;
+
+			padding-left: 50px;
+
+			&:before {
+				content: '';
+
+				position: absolute;
+				top: calc(50% - 7.5px);
+				left: 0;
+
+				display: block;
+				width: 15px;
+				height: 15px;
+
+				border-radius: 100%;
+				background-color: $main-color;
+			}
+		}
+
+		ul {
+			list-style: none;
+
+			li {
+				position: relative;
+
+				&:after {
+					content: '';
+
+					position: absolute;
+					top: -7px;
+					left: 7.5px;
+
+					width: 1px;
+					height: 100%;
+
+					background-color: #000;
+				}
+
+				&:last-child {
+					&:after {
+						height: calc(100% + 7px);
+					}
+				}
+			}
+		}
+	}
+
+	&__item {
+		position: relative;
+
+		padding-top: 45px;
+		padding-left: 50px;
+
+		&:before {
+			content: '';
+
+			position: absolute;
+			top: 63px;
+			left: 8.5px;
+
+			width: 42px;
+			height: 1px;
+
+			background-color: #000;
+		}
+
+		&-head {
+			position: relative;
+
+			padding-left: 56px;
+
+			@include before_circle;
+
+			&:before {
+				top: 0;
+			}
+		}
+
+		&-subtitle {
+			font-size: 12px;
+			font-weight: 500;
+			color: #000;
+		}
+
+		&-body {
+			margin-top: 12px;
+
+			font-size: 12px;
+			font-weight: 500;
+			color: #000;
+		}
+
+		&-icon {
+			position: absolute;
+			top: 14px;
+			left: 14px;
+		}
+	}
+}
