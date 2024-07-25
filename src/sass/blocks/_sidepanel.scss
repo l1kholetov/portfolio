@@ -10,6 +10,22 @@
 	align-items: center;
 	height: 340px;
 
+	&__black {
+		svg path {
+			fill: #000;
+		}
+
+		.sidepanel__divider {
+			background-color: #000;
+		}
+
+		.sidepanel__text{
+			span {
+				color: #000;
+			}
+		}
+	}
+
 	&__link {
 		svg path {
 			transition: fill .2s linear;
@@ -27,6 +43,7 @@
 		height: 70px;
 
 		background-color: #fff;
+		transition: color .2s linear;
 	}
 
 	&__text {
@@ -35,13 +52,14 @@
 
 		span {
 			display: block;
-			width: 150px;
+			width: 154px;
 
 			font-size: 16px;
 			font-weight: 700;
 			color: #fff;
 
-			transform: rotate(-90deg) translate(-36%, -260%);
+			transform: rotate(-90deg) translate(-43%, -270%);
+			transition: color .2s linear;
 		}
 	}
 }
