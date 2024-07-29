@@ -36,4 +36,35 @@
 	&_submit {
 		color: #000;
 	}
+
+	&_back {
+		position: fixed;
+		bottom: 30px;
+		right: 50px;
+
+		color: $main-color;
+
+		background-color: transparent;
+		border: none;
+		box-shadow: none;
+
+		svg {
+			margin-right: 5px;
+
+			path {
+				transition: fill .2s linear;
+			}
+		}
+
+
+		&:hover {
+			color: #fff;
+
+			background-color: $main-color;
+
+			svg path {
+				fill: #fff;
+			}
+		}
+	}
 }
