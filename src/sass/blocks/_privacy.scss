@@ -1,0 +1,45 @@
+.privacy {
+	&__container {
+		padding: 60px 20px;
+	}
+
+	&__table {
+		margin: 20px 0;
+
+		&-cell {
+			padding: 10px;
+
+			border: 1px solid #000;
+		}
+
+		&-list {
+			margin: 0;
+			padding-left: 20px;
+		}
+	}
+}
+
+@media (max-width: 575px) {
+	.privacy {
+		&__container {
+			padding-top: 30px;
+			padding-bottom: 30px;
+
+			h1 {
+				font-size: 16px;
+			}
+
+			h2 {
+				font-size: 14px;
+			}
+
+			p {
+				font-size: 12px;
+			}
+		}
+
+		&__table {
+			font-size: 12px;
+		}
+	}
+}
