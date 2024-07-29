@@ -2,7 +2,9 @@ const hamburger = document.querySelector('.hamburger');
 			menu = document.querySelector('.menu'),
 			menuClose = document.querySelector('.menu__close'),
 			menuOverlay = document.querySelector('.menu__overlay'),
-			sidepanel = document.querySelector('.sidepanel');
+			sidepanel = document.querySelector('.sidepanel'),
+			skillsValue = document.querySelectorAll('.skills__item-value'),
+			skillsBar = document.querySelectorAll('.skills__item-bar');
 
 hamburger.addEventListener('click', () => {
 	menu.classList.add('menu__active');
@@ -27,4 +29,8 @@ window.addEventListener('scroll', () => {
 	} else {
 		sidepanel.classList.remove('sidepanel__black');
 	}
+});
+
+skillsValue.forEach( (item, i) => {
+	skillsBar[i].style.width = item.innerHTML;
 });
