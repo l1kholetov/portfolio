@@ -2,30 +2,13 @@
 	padding-top: 60px;
 	padding-bottom: 60px;
 
-	&__title {
-		text-align: center;
-	}
-
-	&__subtitle {
-		position: relative;
-
-		margin-bottom: 6px;
-
-		text-align: center;
-
-		@include before_circle;
-
-		&:before {
-			left: calc(50% - 18px);
-		}
-	}
-
 	&__wrapper {
 		display: grid;
 		grid-template-columns: repeat(2, 437px);
 		justify-content: space-between;
 
-		padding: 60px 65px 0 65px;
+		margin-top: 60px;
+		padding: 0 65px;
 	}
 
 	&__column {

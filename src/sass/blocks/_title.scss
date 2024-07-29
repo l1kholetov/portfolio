@@ -24,4 +24,22 @@
 	&_fz48 {
 		font-size: 48px;
 	}
+
+	&__section-title {
+		text-align: center;
+	}
+
+	&__section-subtitle {
+		position: relative;
+
+		margin: 6px 0;
+
+		text-align: center;
+
+		@include before_circle;
+
+		&:before {
+			left: calc(50% - 18px);
+		}
+	}
 }
