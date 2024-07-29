@@ -5,16 +5,15 @@
 	&__container {
 		display: flex;
 		justify-content: space-between;
+		padding: 0 50px;
 	}
 
 	&__photo {
 		width: 400px;
-		height: 600px;
 	}
 
 	&__wrapper {
-		padding-right: 100px;
-		max-width: 670px;
+		max-width: 570px;
 	}
 
 	&__subtitle {
