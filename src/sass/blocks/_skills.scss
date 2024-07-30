@@ -3,14 +3,14 @@
 
 	&__soft {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(auto-fill, 270px);
 		grid-template-rows: repeat(2, minmax(270px, auto));
 		grid-auto-rows: minmax(270px, auto);
 		gap: 13px;
+		justify-content: center;
 
 		margin-top: 60px;
 		margin-bottom: 0;
-		padding: 0 10px;
 
 		list-style: none;
 
@@ -40,11 +40,12 @@
 
 	&__list {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(auto-fill, 350px);
 		grid-template-rows: repeat(2, 70px);
 		grid-auto-rows: 70px;
 		column-gap: 45px;
 		row-gap: 30px;
+		justify-content: center;
 		margin-top: 120px;
 		margin-bottom: 0;
 
