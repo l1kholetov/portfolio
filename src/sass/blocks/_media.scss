@@ -18,6 +18,12 @@
 			max-width: 540px;
 		}
 	}
+
+	.resume {
+		&__wrapper {
+			padding: 0;
+		}
+	}
 }
 
 @media (max-width: 992px) {
@@ -25,14 +31,12 @@
 		max-width: 720px;
 	}
 
-	.title {
-		&_fz36 {
-			font-size: 30px;
-		}
-	}
-
 	.about {
 		padding-top: 60px;
+
+		.title_fz36 {
+			font-size: 30px;
+		}
 
 		&__photo {
 			width: 300px;
@@ -58,6 +62,12 @@
 			}
 		}
 	}
+
+	.resume {
+		&__wrapper {
+			grid-template-columns: repeat(2, 333px);
+		}
+	}
 }
 
 @media (max-width: 768px) {
@@ -76,6 +86,14 @@
 		}
 	}
 
+	.divider {
+		margin-top: 10px;
+	}
+
+	.about__divider {
+		margin-top: 0;
+	}
+
 	.hamburger {
 		&_black {
 			span {
@@ -85,6 +103,8 @@
 	}
 
 	.about {
+		padding-bottom: 30px;
+
 		&__container {
 			flex-direction: column;
 		}
@@ -113,6 +133,16 @@
 			&-content {
 				max-width: none;
 			}
+		}
+	}
+
+	.resume {
+		padding: 30px 0;
+
+		&__wrapper {
+			grid-template-columns: 100%;
+			row-gap: 30px;
+			margin-top: 30px;
 		}
 	}
 }
@@ -173,6 +203,10 @@
 	.about {
 		&__photo {
 			height: 400px;
+		}
+
+		.title_fz36 {
+			font-size: 24px;
 		}
 	}
 }
