@@ -4,7 +4,7 @@
 	padding-top: 205px;
 	min-height: 100vh;
 
-	background: url('../img/main_bg.jpg') no-repeat 50% / cover;
+	background: image-set(url('../img/main_bg.jpg') 1x, url('../img/main_bg@2x.jpg') 2x) no-repeat 50% / cover;
 
 	&__title {
 		margin-top: 9px;

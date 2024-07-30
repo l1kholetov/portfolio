@@ -120,7 +120,11 @@
 	<section id="about" class="about">
 		<div class="container about__container">
 			<div class="about__photo">
-				<img src="img/main_photo.jpg" alt="Лихолетов В.А. - Frontend-разработчик">
+				<picture>
+					<source media="(max-width: 576px)" srcset="img/main_photo-min.jpg 1x, img/main_photo-min@2x.jpg 2x">
+					<source media="(min-width: 577px)" srcset="img/main_photo.jpg 1x, img/main_photo@2x.jpg 2x">
+					<img src="img/main_photo.jpg" alt="Лихолетов В.А. - Frontend-разработчи">
+				</picture>
 			</div>
 
 			<div class="about__wrapper">
@@ -384,27 +388,27 @@
 
 			<div class="portfolio__wrapper">
 				<a href="#" class="portfolio__item">
-					<img src="img/works/uber.jpg" alt="Uber">
+					<img src="img/works/uber.jpg" srcset="img/works/uber@2x.jpg 2x" alt="Uber">
 				</a>
 
 				<a href="/pulse" class="portfolio__item">
-					<img src="img/works/pulse.jpg" alt="Pulse">
+					<img src="img/works/pulse.jpg" srcset="img/works/pulse@2x.jpg 2x" alt="Pulse">
 				</a>
 
 				<a href="#" class="portfolio__item">
-					<img src="img/works/bread.jpg" alt="test">
+					<img src="img/works/bread.jpg" srcset="img/works/bread@2x.jpg 2x" alt="test">
 				</a>
 
 				<a href="#" class="portfolio__item portfolio__item-vertical">
-					<img src="img/works/plans.jpg" alt="test">
+					<img src="img/works/plans.jpg" srcset="img/works/plans@2x.jpg 2x" alt="test">
 				</a>
 
 				<a href="#" class="portfolio__item">
-					<img src="img/works/ipad.jpg" alt="test">
+					<img src="img/works/ipad.jpg" srcset="img/works/ipad@2x.jpg 2x" alt="test">
 				</a>
 
 				<a href="#" class="portfolio__item portfolio__item-horizontal">
-					<img src="img/works/mac.jpg" alt="test">
+					<img src="img/works/mac.jpg" srcset="img/works/mac@2x.jpg 2x" alt="test">
 				</a>
 			</div>
 		</div>
@@ -453,7 +457,7 @@
 	<!-- <section id="contacts" class="contacts">
 		<div class="container contacts__container">
 			<div class="contacts__photo">
-				<img src="img/contacts_photo.jpg" alt="Лихолетов В.А. - Frontend-разработчик">
+				<img src="img/contacts_photo.jpg" srcset="img/contacts_photo@2x.jpg 2x" alt="Лихолетов В.А. - Frontend-разработчик">
 			</div>
 
 			<div class="contacts__wrapper">
