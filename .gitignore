@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+send_mail.php
 
 # testing
 /coverage

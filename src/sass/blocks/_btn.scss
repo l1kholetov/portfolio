@@ -19,6 +19,18 @@
 		text-decoration: none;
 	}
 
+	&:focus, &:active {
+		color: $main-color;
+
+		background-color: #fff;
+		text-decoration: none;
+		outline: none;
+	}
+
+	&:active {
+		background-color: rgba($color: #fff, $alpha: .5);
+	}
+
 	&_link {
 		padding: 10px 20px;
 
@@ -27,9 +39,8 @@
 
 		box-shadow: none;
 
-		&:hover {
+		&:hover, &:focus, &:active {
 			border: 2px solid $main-color;
-
 		}
 	}
 

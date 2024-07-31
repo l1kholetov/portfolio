@@ -1,74 +1,92 @@
-const hamburger = document.querySelector('.hamburger'),
-			menu = document.querySelector('.menu'),
-			menuClose = document.querySelector('.menu__close'),
-			menuOverlay = document.querySelector('.menu__overlay'),
-			menuLink = document.querySelectorAll('.menu__link'),
-			sidepanel = document.querySelector('.sidepanel'),
-			promo = document.querySelector('.promo'),
-			skillsValue = document.querySelectorAll('.skills__item-value'),
-			skillsBar = document.querySelectorAll('.skills__item-bar');
+'use strict'
 
-hamburger.addEventListener('click', () => {
-	menu.classList.add('menu_active');
-	document.body.style.overflow = 'hidden';
-});
+document.addEventListener('DOMContentLoaded', () => {
+	const hamburger = document.querySelector('.hamburger'),
+				menu = document.querySelector('.menu'),
+				menuClose = document.querySelector('.menu__close'),
+				menuOverlay = document.querySelector('.menu__overlay'),
+				menuLink = document.querySelectorAll('.menu__link'),
+				sidepanel = document.querySelector('.sidepanel'),
+				promo = document.querySelector('.promo'),
+				skillsValue = document.querySelectorAll('.skills__item-value'),
+				skillsBar = document.querySelectorAll('.skills__item-bar'),
+				contactsForm = document.querySelector('.contacts__form');
 
-window.addEventListener('scroll', () => {
-	if (scrollY >= promo.scrollHeight - 20) {
-		hamburger.classList.add('hamburger_black')
-	} else {
-		hamburger.classList.remove('hamburger_black');
+	hamburger.addEventListener('click', () => {
+		menu.classList.add('menu_active');
+		document.body.style.overflow = 'hidden';
+	});
+
+	window.addEventListener('scroll', () => {
+		if (scrollY >= promo.scrollHeight - 20) {
+			hamburger.classList.add('hamburger_black')
+		} else {
+			hamburger.classList.remove('hamburger_black');
+		}
+	});
+
+	function modalClose(sel) {
+		sel.addEventListener('click', () => {
+			menu.classList.remove('menu_active');
+			document.body.style.overflow = '';
+		});
 	}
-});
 
-function modalClose(sel) {
-	sel.addEventListener('click', () => {
-		menu.classList.remove('menu_active');
+	modalClose(menuClose);
+	modalClose(menuOverlay);
+
+	menuLink.forEach(item => {
+		modalClose(item);
+	});
+
+	window.addEventListener('keydown', (e) => {
+		if (e.keyCode == '27') menu.classList.remove('menu_active');
 		document.body.style.overflow = '';
 	});
-}
 
-modalClose(menuClose);
-modalClose(menuOverlay);
+	window.addEventListener('scroll', () => {
+		if (scrollY >= promo.scrollHeight - 230) {
+			sidepanel.classList.add('sidepanel_black')
+		} else {
+			sidepanel.classList.remove('sidepanel_black');
+		}
+	});
 
-menuLink.forEach(item => {
-	modalClose(item);
-});
+	skillsValue.forEach( (item, i) => {
+		skillsBar[i].style.width = item.innerHTML;
+	});
 
-window.addEventListener('keydown', (e) => {
-	if (e.keyCode == '27') menu.classList.remove('menu_active');
-	document.body.style.overflow = '';
-});
+	document.querySelectorAll('a[href^="#"').forEach(link => {
 
-window.addEventListener('scroll', () => {
-	if (scrollY >= promo.scrollHeight - 230) {
-		sidepanel.classList.add('sidepanel_black')
-	} else {
-		sidepanel.classList.remove('sidepanel_black');
-	}
-});
+		link.addEventListener('click', function(e) {
+				e.preventDefault();
 
-skillsValue.forEach( (item, i) => {
-	skillsBar[i].style.width = item.innerHTML;
-});
+				let href = this.getAttribute('href').substring(1);
 
-document.querySelectorAll('a[href^="#"').forEach(link => {
+				const scrollTarget = document.getElementById(href);
 
-	link.addEventListener('click', function(e) {
-			e.preventDefault();
+				// const topOffset = document.querySelector('.scrollto').offsetHeight;
+				const topOffset = 0;
+				const elementPosition = scrollTarget.getBoundingClientRect().top;
+				const offsetPosition = elementPosition - topOffset;
 
-			let href = this.getAttribute('href').substring(1);
+				window.scrollBy({
+						top: offsetPosition,
+						behavior: 'smooth'
+				});
+		});
+	});
 
-			const scrollTarget = document.getElementById(href);
+	contactsForm.addEventListener('submit', async (e) => {
+		e.preventDefault();
 
-			// const topOffset = document.querySelector('.scrollto').offsetHeight;
-			const topOffset = 0;
-			const elementPosition = scrollTarget.getBoundingClientRect().top;
-			const offsetPosition = elementPosition - topOffset;
+		let formData = new FormData(contactsForm);
 
-			window.scrollBy({
-					top: offsetPosition,
-					behavior: 'smooth'
-			});
+		await fetch('mailer/send_mail.php', {
+			method: 'POST',
+			body: formData
+		});
+
+		contactsForm.reset();
 	});
 });

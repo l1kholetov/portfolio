@@ -497,7 +497,7 @@
 					Или оставьте ваши данные и я сам вам напишу:
 				</div>
 
-				<form action="#" class="contacts__form">
+				<form action="mailer/send_mail.php" class="contacts__form" method="post">
 					<div class="contacts__input">
 						<input required id="name" type="text" name="name">
 						<label for="name">Ваше имя</label>
@@ -509,7 +509,7 @@
 					</div>
 
 					<div class="contacts__textarea">
-						<textarea name="text" id="text"></textarea>
+						<textarea name="message" id="text"></textarea>
 						<label for="text">Ваше сообщение</label>
 					</div>
 
