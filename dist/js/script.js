@@ -10,11 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
 				promo = document.querySelector('.promo'),
 				skillsValue = document.querySelectorAll('.skills__item-value'),
 				skillsBar = document.querySelectorAll('.skills__item-bar'),
-				contactsForm = document.querySelector('.contacts__form');
+				contactsForm = document.querySelector('.contacts__form'),
+				intElements = ['a', 'button', 'input', 'textarea', '[tabindex]'];;
 
-	hamburger.addEventListener('click', () => {
+	hamburger.addEventListener('click', (e) => {
+		e.preventDefault();
+
+		let elements = document.querySelectorAll(intElements.toString());
+
 		menu.classList.add('menu_active');
 		document.body.style.overflow = 'hidden';
+
+		elements.forEach((item) => {
+			if (!menu.contains(item)) {
+				if (item.getAttribute('tabindex') !== '-1') {
+					item.setAttribute('tabindex', '-1');
+				}
+			}
+		});
 	});
 
 	window.addEventListener('scroll', () => {
@@ -26,9 +39,21 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	function modalClose(sel) {
-		sel.addEventListener('click', () => {
+		sel.addEventListener('click', (e) => {
+			if (sel == menuClose) e.preventDefault();
+
+			let elements = document.querySelectorAll(intElements.toString());
+
 			menu.classList.remove('menu_active');
 			document.body.style.overflow = '';
+
+			elements.forEach((item) => {
+				if (!menu.contains(item)) {
+					if (item.getAttribute('tabindex') !== '0') {
+						item.setAttribute('tabindex', '0');
+					}
+				}
+			});
 		});
 	}
 
@@ -40,8 +65,20 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	window.addEventListener('keydown', (e) => {
-		if (e.keyCode == '27') menu.classList.remove('menu_active');
-		document.body.style.overflow = '';
+		if (e.key == 'Escape') {
+			let elements = document.querySelectorAll(intElements.toString());
+
+			menu.classList.remove('menu_active');
+			document.body.style.overflow = '';
+
+			elements.forEach((item) => {
+				if (!menu.contains(item)) {
+					if (item.getAttribute('tabindex') !== '0') {
+						item.setAttribute('tabindex', '0');
+					}
+				}
+			});
+		}
 	});
 
 	window.addEventListener('scroll', () => {
@@ -89,4 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		contactsForm.reset();
 	});
+
+
 });

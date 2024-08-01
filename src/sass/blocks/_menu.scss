@@ -19,6 +19,18 @@
 		}
 	}
 
+	&:focus, &:active {
+		outline: none;
+
+		span {
+			background-color: $main-color;
+		}
+	}
+
+	&:active {
+		transform: scale(0.97);
+	}
+
 	span {
 		display: block;
 		width: 30px;
@@ -86,8 +98,15 @@
 			color: #FFF;
 			text-transform: uppercase;
 
+			transition: color .2s linear;
+
 			&:hover {
 				text-decoration: none;
+			}
+
+			&:focus {
+				outline: none;
+				color: #000;
 			}
 		}
 
@@ -135,7 +154,9 @@
 				transition: fill .2s linear;
 			}
 
-			&:hover {
+			&:hover, &:focus {
+				outline: none;
+
 				svg path {
 					fill: #fff;
 				}
@@ -200,7 +221,9 @@
 			transform: rotate(-45deg);
 		}
 
-		&:hover {
+		&:hover, &:focus {
+			outline: none;
+
 			&:before, &:after {
 				background-color: #fff;
 			}

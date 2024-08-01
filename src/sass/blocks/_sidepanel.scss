@@ -36,6 +36,14 @@
 				fill: $main-color;
 			}
 		}
+
+		&:focus, &:active {
+			outline: none;
+
+			svg path {
+				fill: $main-color;
+			}
+		}
 	}
 
 	&__divider {

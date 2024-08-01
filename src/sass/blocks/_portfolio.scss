@@ -30,6 +30,13 @@
 
 		&:hover {
 			filter: grayscale(100%);
+			transform: scale(0.99);
+		}
+
+		&:focus, &:active {
+			outline: none;
+			filter: grayscale(100%);
+			transform: scale(0.99);
 		}
 	}
 }

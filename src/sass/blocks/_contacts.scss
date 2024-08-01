@@ -49,13 +49,27 @@
 	}
 
 	&__link {
-		svg path {
-			transition: fill .2s linear;
-		}
-
-		&:hover {
+		a {
 			svg path {
-				fill: $main-color;
+				transition: fill .2s linear;
+			}
+
+			&:hover {
+				svg path {
+					fill: $main-color;
+				}
+			}
+
+			&:focus, &:active {
+				outline: none;
+
+				svg path {
+					fill: $main-color;
+				}
+			}
+
+			&:active {
+				transform: scale(1.5);
 			}
 		}
 
@@ -107,6 +121,11 @@
 
 		input {
 			margin-right: 10px;
+
+			&:focus {
+				outline: 2px solid $main-color;
+				outline-offset: 2px;
+			}
 		}
 	}
 
