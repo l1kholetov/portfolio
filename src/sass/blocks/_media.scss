@@ -42,6 +42,10 @@
 				grid-row: unset;
 				grid-column: unset;
 			}
+
+			&-horizontal {
+				grid-column: 1 / 4;
+			}
 		}
 	}
 
