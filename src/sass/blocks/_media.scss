@@ -114,6 +114,14 @@
 		}
 	}
 
+	.portfolio {
+		&__item {
+			&-horizontal{
+				grid-column: unset;
+			}
+		}
+	}
+
 	.price {
 		&__list {
 			grid-template: repeat(3, minmax(44px, auto)) / repeat(2, 340px);
